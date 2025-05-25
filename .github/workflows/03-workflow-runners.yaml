@@ -1,0 +1,35 @@
+name: 03 - Workflow Runners
+on: push
+
+jobs: 
+  ubuntu-echo:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Show OS
+        run: |
+          echo "OS is running on: ${{ runner.os }}"
+          echo "Runner ID: ${{ runner.id }}"
+          echo "Runner name: ${{ runner.name }}"
+          echo "Runner version: ${{ runner.version }}"
+          echo "Runner arch: ${{ runner.arch }}"
+          echo "Runner os: ${{ runner.os }}"
+          echo "Runner runner_group: ${{ runner.runner_group }}"
+          echo "Runner runner_labels: ${{ runner.runner_labels }}"
+  windows-echo:
+    runs-on: windows-latest
+    steps:
+      - name: Show OS
+        run: |
+          echo "OS is running on: ${{ runner.os }}"
+          echo "Runner ID: ${{ runner.id }}"
+          echo "Runner name: ${{ runner.name }}"
+          echo "Runner version: ${{ runner.version }}"
+  mac-echo:
+    runs-on: macos-latest
+    steps:
+      - name: Show OS
+        run: |
+          echo "OS is running on: $RUNNER_OS"
+          echo "Runner ID: ${{ runner.id }}"
+          echo "Runner name: ${{ runner.name }}"
+          echo "Runner version: ${{ runner.version }}"
