@@ -29,7 +29,7 @@ jobs:
     steps:
       - name: Show OS
         run: |
-          echo "OS is running on: $RUNNER_OS"
+          echo "OS is running on: ${{ runner.os }}"
           echo "Runner ID: ${{ runner.id }}"
           echo "Runner name: ${{ runner.name }}"
           echo "Runner version: ${{ runner.version }}"
